@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  # starts a database
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: events
+      POSTGRES_USER: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    ports:
+      - "4200:4200"
+    depends_on:
+      - db

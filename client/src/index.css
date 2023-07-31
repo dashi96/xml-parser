@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Euclid';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('./fonts/euclid/euclidcirculara-regular.woff2') format('woff2'), url('./fonts/euclid/euclidcirculara-regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Euclid';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+    src: url('./fonts/euclid/euclidcirculara-medium.woff2') format('woff2'), url('./fonts/euclid/euclidcirculara-medium.woff') format('woff');
+  }
+
+  th {
+    @apply font-normal;
+  }
+
+  * {
+    @apply focus-visible:outline-red-50 focus-visible:outline focus-visible:outline-2;
+  }
+
+  html,
+  body {
+    @apply font-body;
+    @apply text-p100;
+    @apply bg-grayscale-450;
+  }
+}
